@@ -25,5 +25,5 @@ jobs:
         port: ${{ secrets.VPS_SSH_PORT }}
         script: |
           cd "${{ secrets.FIVEM_SERVER_PATH }}"
-          git pull origin cicd
-          ./restart.sh
+          sudo git pull origin cicd
+          sudo ./restart.sh
