@@ -26,4 +26,4 @@ jobs:
         script: |
           cd /home/fresh/artefact/txData/QBCoreFramework_C683CD.base
           git pull origin cicd
-        ./restart.sh
+          ./restart.sh
