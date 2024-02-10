@@ -24,6 +24,9 @@ jobs:
         password: ${{ secrets.VPS_PASSWORD }}
         port: ${{ secrets.VPS_SSH_PORT }}
         script: |
+          # Connect to the server and execute commands
+          sshpass -p "${{ secrets.VPS_PASSWORD }}" ssh -o StrictHostKeyChecking=no -p "${{ secrets.VPS_SSH_PORT }}" "${{ secrets.VPS_USERNAME }}"@"${{ secrets.VPS_HOST }}" << 'EOF'
           cd /home/fresh/artefact/txData/QBCoreFramework_C683CD.base
           git pull origin cicd
           ./restart.sh
+          EOF
